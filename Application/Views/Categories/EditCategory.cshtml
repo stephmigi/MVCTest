@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "EditCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Application.Models.ViewModels.CategoryViewModel
+
+<h2>Edit Category : @Model.Category.Title</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => Model.Category.Title)
+    @Html.EditorFor(model => Model.Category.Title)
+
+    @Html.LabelFor(model => Model.Category.Description)
+    @Html.EditorFor(model => Model.Category.Description)
+
+    <input type="submit" value="Editer" />
+}

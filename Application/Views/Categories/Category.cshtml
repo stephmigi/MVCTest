@@ -1,0 +1,15 @@
+﻿@model Application.Models.ViewModels.CategoryViewModel
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<h2>Category details</h2>
+<div>Nom de la catégorie : @Model.Category.Title</div>
+<div>Description : @Model.Category.Description</div>
+
+Sous-Catégories :
+<ul>
+@foreach (var subCategory in Model.Category.GetSubCategories())
+{
+    <li>@subCategory.Title</li>
+}
+</ul>
+<div>@Html.ActionLink("Retour", "Index")</div>

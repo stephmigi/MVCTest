@@ -1,0 +1,7 @@
+﻿@model Application.Models.ViewModels.SubCategoryViewModel
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<h2>SubCategory details</h2>
+<div>Nom de la catégorie : @Model.SubCategory.Title</div>
+
+<div>@Html.ActionLink("Retour", "Index")</div>

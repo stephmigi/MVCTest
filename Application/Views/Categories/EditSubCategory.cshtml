@@ -1,0 +1,14 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Application.Models.ViewModels.SubCategoryViewModel
+
+<h2>Edit Category : @Model.SubCategory.Title</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => Model.SubCategory.Title)
+    @Html.EditorFor(model => Model.SubCategory.Title)
+
+    <input type="submit" value="Editer" />
+}

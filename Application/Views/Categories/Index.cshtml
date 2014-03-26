@@ -1,0 +1,23 @@
+﻿@model Application.Models.ViewModels.CategoriesViewModel
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<h2>Liste des catégories</h2>
+
+<ul>
+@foreach (var category in Model.Categories)
+{
+    <li>
+        @Html.ActionLink(category.Title, "Detail", new { id = category.Id })
+        @Html.ActionLink("Editer", "Edit", new { id = category.Id })
+    </li>
+    <ol>
+    @foreach (var subCategory in category.GetSubCategories())
+    {
+        <li>
+            @Html.ActionLink(subCategory.Title, "SubCatDetail", new { id = subCategory.Id })
+            @Html.ActionLink("Editer", "SubCatEdit", new { id = subCategory.Id })
+        </li>
+    }
+    </ol>
+}
+</ul>
